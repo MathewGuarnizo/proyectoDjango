@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
+    <link rel="icon" href="{%static 'icons/logo.png'%}">
+    <title>
+        {% block title %}
+        Inicio
+        {% endblock %}
+    </title>
+</head>
+<header>
+    <div class="logotipo">
+        <img src="{%static 'image/logo.png'%}">
+        <h1  class="header">Sitio web con Django | Mathew Guarnizo</h1>
+    </div>
+</header>
+<body>
+    {% comment 'informacion de la pagina' %}  
+        proyecto en desarrollo de ventas de productos de ropa 
+    {% endcomment %}
+    <nav class="menu">
+        <div>
+            <ul>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/holaMundo">Hola Mundo</a>
+                </li> -->
+                {% comment %} <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/saludo">Saludo</a>
+                </li> {% endcomment %}
+                <li>
+                    <a href={%url 'presentacion' %}>Presentacion</a>
+                </li>
+                <li>
+                    <a href={%url 'productos_Servicios' %}>Productos y Servicios</a>
+                </li>
+                <li>
+                    <a href={%url 'quienesSomos' %}>Quienes Somos</a>
+                </li>
+                <li>
+                    <a href={%url 'contactanos' %}>Contactanos</a>
+                </li>
+                <li>
+                    <a href={%url 'contacto' %}>Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="barra">
+        <span class="izq"></span>
+        <span class="relleno"></span>
+        <span class="der"></span>
+    </div>
+
+    <section id="content">
+        <div class="box">
+            {%block content%}
+            <strong>Bienvenido a mi pagina</strong>
+            {%endblock%}
+        </div>
+    </section>
+    <footer style="font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: center;">Master del Framework Django &copy; Mathew Guarnizo - {%now 'Y'%}</footer>
+</body>
+</html>

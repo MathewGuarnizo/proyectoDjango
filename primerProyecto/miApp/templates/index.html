@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{%load static%}
+<title>
+    {% block title %}
+        {{titulo}}
+    {% endblock %}
+</title>
+{% block content %}
+<h1>Inicio</h1>
+<p> {{'Servicio Nacional de Aprendizaje'|cut:' '}} </p>
+<h1 class="title">{{title}}</h1>
+{{mi_variable}}
+{%if name == 'Mathew Guarnizo'%}
+    <p>{{name}}</p>
+{%else%}
+    <br>
+    <strong>nombre no existe o no coincide</strong>
+{%endif%}
+
+<p class="inicio2">Bienvenidos a un mini proyecto de Django</p> <br>
+
+<h3>lista while:</h3><br>
+
+<ul>
+    {% for elemento in mi_lista %}
+        <li>{{ elemento }}</li>
+    {% endfor %}
+</ul>
+<br>
+<h3>lista for:</h3>
+<br>
+<ul>
+    {% for elemento in otra_lista %}
+        <li>{{ elemento }}</li>
+    {% endfor %}
+</ul>
+
+<p> Años desde el 2024 hasta 2050</p>
+{%include 'fechaActual.html' with saludo='Hola desde la Plantilla'%}
+{%endblock%}
+

@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{%load static%}
+<title>
+    {% block title %}
+    Contacto
+    {% endblock %}
+</title>
+{% block content %}
+<h2>Formulario de Contacto</h2>
+<form action="/submit_contact_form" method="post">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" id="apellido" name="apellido" required><br>
+
+    <label for="email">Correo Electrónico:</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="telefono">Teléfono:</label><br>
+    <input type="tel" id="telefono" name="telefono" required><br>
+
+    <label for="direccion">Dirección Postal:</label><br>
+    <input type="text" id="direccion" name="direccion" required><br>
+
+    <label for="preferencia_contacto">Preferencia de Contacto:</label><br>
+    <select id="preferencia_contacto" name="preferencia_contacto" required>
+        <option value="email">Correo Electrónico</option>
+        <option value="telefono">Teléfono</option>
+        <option value="correo_postal">Correo Postal</option>
+    </select><br>
+
+    <label for="motivo_contacto">Motivo de Contacto:</label><br>
+    <select id="motivo_contacto" name="motivo_contacto" multiple required>
+        <option value="consulta">Consulta general</option>
+        <option value="soporte">Soporte técnico</option>
+        <option value="solicitud">Solicitud de información</option>
+        <option value="comentarios">Comentarios/Sugerencias</option>
+        <option value="otro">Otro</option>
+    </select><br>
+
+    <label for="comentario">Comentario o Pregunta:</label><br>
+    <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea><br>
+
+    <input type="submit" value="Enviar">
+</form>
+<br>
+<h2 class="contacto">CONTACTO</h1>
+<p> Tv. 1 Sur # 44 - 229, Ibagué, Tolima, Colombia <br>
+    WhatsApp: 3102013038 <br>
+    servicioalcliente@roottco.com <br>
+    Horario de apertura: Lunes a Sábado: 9:00AM - 06:00PM</p>
+{% endblock %}

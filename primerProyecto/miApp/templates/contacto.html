@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load filters %}
+{%block content%}
+<h1 class="title"> pagina de mi web </h1>
+<p> {{ "Creado por Mathew Guanrizo" |cut:' '}} </p>
+{{texto|default:"No hay texto"}}
+
+<p> {{"Mathew Guarnizo"|first}} </p> 
+<p> {{"Mathew Guarnizo"|last}} </p>
+<p> {{"Mathew Guarnizo"}} </p>
+<p> {{"Mathew Guarnizo 😂"|join:","}} </p>
+<p> {{nombres|length}} </p>
+<p> {{'colombia'|upper}} </p>
+<p> {{'colombia'|lower}} </p>
+<p> {{nombres|random}} </p>
+<p> {{"Mathew Guarnizo"|saludo|safe}} </p>
+<p> {{"Mathew Guarnizo"|subcadena:"Mathew"|safe}} </p> 
+
+<p> <h1> Hola Mundo </h1> </p>
+
+{% comment %} {{ "Mathew Guarnizo"|saludo|safe }} {% endcomment %}
+
+{%endblock%}
