@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{titulo}}
+{% endblock %}
+
+{%block content%}
+<h1>Listado de Articulos de mi blog</h1>
+<hr>
+<div class="lista">
+    <ul>
+        {% for article in articulos %}
+        <li>
+            <strong>Código: </strong>{{article.id }}
+            <br> 
+            <strong>Título: </strong>{{article.title}}  
+            <br>
+            <strong>Contenido: </strong>{{article.content}} 
+            <br>
+            <strong>Estado: </strong>{{article.public}}
+            <hr/>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{%endblock%}

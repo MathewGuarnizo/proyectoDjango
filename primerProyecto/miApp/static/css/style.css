@@ -202,7 +202,9 @@ nav ul li a:hover{
     margin-bottom: 30px;
     margin-top: 40px;  (Otra forma de ajustar) */
     margin: 40px auto 20px auto;
+    padding: 40px ;
     background-color: #1b1e1f;
+    
 }
 .container{
     display: flex;
@@ -218,11 +220,11 @@ nav ul li a:hover{
 
 .box {
     background: #37383b;
-    width: 95%;
+    width: 90%;
     min-height: 300px;
     padding: 20px;
     border: 5px solid #dddd;
-    margin: 10px auto;
+    margin-top: 30px;
     flex-basis: 45%;
     border: 5px solid #a007f9;
     animation: BGcolorchanging-5colors 8s linear infinite alternate both;
@@ -230,7 +232,8 @@ nav ul li a:hover{
     border-radius: 15px;
 }
 .box ul,li, p{
-    margin-left: 40px;
+    /* margin-left: 40px; */
+    padding: 10px;
     line-height: 20px;
     color: #fafafa;
 }
@@ -261,4 +264,10 @@ p,h3{
 .box h1,h2,h3{
     animation: difuminado 3s infinite alternate;
     color: #0bffe7;
+}
+
+.lista ul li{
+    list-style: none;
+    animation: difuminado 3s infinite alternate;
+    color: #ffffff;
 }
