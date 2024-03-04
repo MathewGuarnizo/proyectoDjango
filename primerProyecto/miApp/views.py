@@ -100,8 +100,15 @@ def editar_articulo(request,id):
     return HttpResponse(f"El articulo {articulo.id}, ha sido actualizado con el nombre: {articulo.title}  y su estado es {articulo.public}")
 
 def articulos(request):
-    articulos = Article.objects.order_by('title')
+    articulos = Article.objects.order_by('id')
     return render(request, 'articulos.html',{
         'articulos': articulos,
     })
     return HttpResponse()
+
+def eliminar_articulo(request, id):
+    articulo = Article.objects.get(pk=id)
+    tituloArticulo = articulo.title
+    articulo.delete()
+
+    return HttpResponse(f"El artículo '{tituloArticulo}' ha sido eliminado correctamente.")
